@@ -472,10 +472,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@next/env@12.3.4":
-  "integrity" "sha512-H/69Lc5Q02dq3o+dxxy5O/oNxFsZpdL6WREtOOtOM1B/weonIwDXkekr1KV5DPVPr12IHFPrMrcJQ6bgPMfn7A=="
-  "resolved" "https://registry.npmjs.org/@next/env/-/env-12.3.4.tgz"
-  "version" "12.3.4"
+"@next/env@12.3.7":
+  "integrity" "sha512-gCw4sTeHoNr0EUO+Nk9Ll21OzF3PnmM0GlHaKgsY2AWQSqQlMgECvB0YI4k21M9iGy+tQ5RMyXQuoIMpzhtxww=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-12.3.7.tgz"
+  "version" "12.3.7"
 
 "@next/eslint-plugin-next@16.2.4":
   "integrity" "sha512-tOX826JJ96gYK/go18sPUgMq9FK1tqxBFfUCEufJb5XIkWFFmpgU7mahJANKGkHs7F41ir3tReJ3Lv5La0RvhA=="
@@ -774,7 +774,7 @@
   dependencies:
     "@apollo/protobufjs" "1.2.6"
 
-"apollo-server-core@^3.11.1":
+"apollo-server-core@^3.13.0":
   "integrity" "sha512-v/g6DR6KuHn9DYSdtQijz8dLOkP78I5JSVJzPkARhDbhpH74QNwrQ2PP2URAPPEDJ2EeZNQDX8PvbYkAKqg+kg=="
   "resolved" "https://registry.npmjs.org/apollo-server-core/-/apollo-server-core-3.13.0.tgz"
   "version" "3.13.0"
@@ -816,13 +816,13 @@
   "version" "3.3.1"
 
 "apollo-server-micro@^3.11.1":
-  "integrity" "sha512-4bETccnRotMQIg3ah4/NAWPppB05i5ePrTOuLBGBBQaV8bz1E4Md3snxSB8JkANND7sXmH9OCiKKeLFK8q8JaA=="
-  "resolved" "https://registry.npmjs.org/apollo-server-micro/-/apollo-server-micro-3.11.1.tgz"
-  "version" "3.11.1"
+  "integrity" "sha512-EdhhowM1nPsOhcJGpnzlcuTody/Wf7xjj+NYV5Y3qelUC5xaCYPv5S/W6CRgPfsNwoYWwdKdaAgDpDjucrwbbg=="
+  "resolved" "https://registry.npmjs.org/apollo-server-micro/-/apollo-server-micro-3.13.0.tgz"
+  "version" "3.13.0"
   dependencies:
     "@hapi/accept" "^5.0.2"
-    "apollo-server-core" "^3.11.1"
-    "apollo-server-types" "^3.7.1"
+    "apollo-server-core" "^3.13.0"
+    "apollo-server-types" "^3.8.0"
     "type-is" "^1.6.18"
 
 "apollo-server-plugin-base@^3.7.2":
@@ -832,7 +832,7 @@
   dependencies:
     "apollo-server-types" "^3.8.0"
 
-"apollo-server-types@^3.7.1", "apollo-server-types@^3.8.0":
+"apollo-server-types@^3.8.0":
   "integrity" "sha512-ZI/8rTE4ww8BHktsVpb91Sdq7Cb71rdSkXELSwdSR0eXu600/sY+1UXhTWdiJvk+Eq5ljqoHLwLbY2+Clq2b9A=="
   "resolved" "https://registry.npmjs.org/apollo-server-types/-/apollo-server-types-3.8.0.tgz"
   "version" "3.8.0"
@@ -2235,7 +2235,7 @@
   "resolved" "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   "version" "1.4.1"
 
-"micro@^9.3.4":
+"micro@^9.3.4", "micro@^9.4.1":
   "integrity" "sha512-Lpjcbp6Y9GJIfewxDfTmu9eW0rt0MGo+Gs1d3yJLFa7mhErtKkCngGhDbA/O1gqUjEwsHh+jWPg8BJ0Bx4AgFA=="
   "resolved" "https://registry.npmjs.org/micro/-/micro-9.4.1.tgz"
   "version" "9.4.1"
@@ -2304,11 +2304,11 @@
   "version" "1.4.0"
 
 "next@^12.3.4":
-  "integrity" "sha512-VcyMJUtLZBGzLKo3oMxrEF0stxh8HwuW976pAzlHhI3t8qJ4SROjCrSh1T24bhrbjw55wfZXAbXPGwPt5FLRfQ=="
-  "resolved" "https://registry.npmjs.org/next/-/next-12.3.4.tgz"
-  "version" "12.3.4"
+  "integrity" "sha512-3PDn+u77s5WpbkUrslBP6SKLMeUj9cSx251LOt+yP9fgnqXV/ydny81xQsclz9R6RzCLONMCtwK2RvDdLa/mJQ=="
+  "resolved" "https://registry.npmjs.org/next/-/next-12.3.7.tgz"
+  "version" "12.3.7"
   dependencies:
-    "@next/env" "12.3.4"
+    "@next/env" "12.3.7"
     "@swc/helpers" "0.4.11"
     "caniuse-lite" "^1.0.30001406"
     "postcss" "8.4.14"
@@ -2487,12 +2487,12 @@
   "resolved" "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz"
   "version" "1.1.1"
 
-"picomatch@^2.3.1":
+"picomatch@^2.3.1", "picomatch@^3 || ^4":
   "integrity" "sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA=="
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz"
   "version" "2.3.2"
 
-"picomatch@^3 || ^4", "picomatch@^4.0.4":
+"picomatch@^4.0.4":
   "integrity" "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A=="
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz"
   "version" "4.0.4"
@@ -3043,11 +3043,6 @@
     "@typescript-eslint/parser" "8.59.1"
     "@typescript-eslint/typescript-estree" "8.59.1"
     "@typescript-eslint/utils" "8.59.1"
-
-"typescript@>=3.3.1", "typescript@>=4.8.4", "typescript@>=4.8.4 <6.1.0":
-  "integrity" "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz"
-  "version" "6.0.3"
 
 "unbox-primitive@^1.1.0":
   "integrity" "sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw=="
