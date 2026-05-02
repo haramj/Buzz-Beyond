@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "16.2.4",
-    "react": "19.2.5",
-    "react-dom": "19.2.5"
+    "@apollo/client": "^3.14.1",
+    "apollo-server-micro": "^3.11.1",
+    "axios": "^1.15.2",
+    "graphql": "^16.13.2",
+    "next": "^12.3.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rxjs": "^7.8.2"
   },
   "devDependencies": {
     "eslint": "10.3.0",

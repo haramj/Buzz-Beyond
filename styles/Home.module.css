@@ -1,129 +1,276 @@
-.container {
-  padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.mainSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* 가로 중앙 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  min-height: 80vh; /* 화면 높이에 맞춤 */
+  text-align: center;
+  padding: 20px;
+  position: relative; /* 지구본의 기준점 */
+  overflow: hidden; /* 이미지가 넘치지 않게 */
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
+/* --- 타이틀 및 강조색 --- */
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem; /* 피그마 비율에 맞춤 */
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
 }
 
-.title,
-.description {
+.title span {
+  color: #ff7675; /* 피그마의 연분홍색 강조 */
+}
+
+/* --- 버튼 grid (이미지 위에 오도록 z-index 설정) --- */
+.buttonGrid {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10; /* ⭐ 중요: 이미지보다 높게 설정 ⭐ */
+  position: relative;
+}
+
+/* --- ⭐ 핵심 수정: 지구본 이미지 스타일 ⭐ --- */
+.globeImage {
+  margin-top: 20px; /* 버튼과의 간격 줄임 */
+  width: 100%; /* 부모 너비에 맞추되 */
+  max-width: 280px; /* ⭐ 중요: 피그마처럼 최대 크기를 280px로 제한 ⭐ */
+  height: auto; /* 비율 유지 */
+  z-index: 1; /* ⭐ 중요: 버튼 아래에 깔리도록 ⭐ */
+  opacity: 0.9; /* 살짝 투명하게 (선택 사항) */
+  object-fit: contain; /* 이미지 비율 깨지지 않게 */
+  
+  /* 필요하다면 위치를 수동으로 조금 조정할 수 있습니다. */
+  /* */
+  /* */
+}
+
+/* --- 공통 레이아웃 --- */
+.detailSection {
+  background-color: #f8f8f8; /* 피그마 특유의 연한 배경색 */
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* --- 상단 헤더 영역 (지구본 + 타이틀) --- */
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.smallGlobe {
+  width: 50px; /* 피그마 비율 */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.headerWrapper h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #333;
+  margin: 0;
+}
+
+/* --- 1. 메인 날씨 카드 (피그마 블루 카드) --- */
+.currentWeatherCard {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  background: white;
+  border: 3px solid #5a88ff; /* 피그마의 핵심 파란색 테두리 */
+  border-radius: 12px;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between; /* 좌우 배치 */
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.weatherInfoLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.weatherIconBox {
+  width: 80px;
+  height: 80px;
+  background: #f2e1df; /* 피그마의 연분홍 아이콘 배경색 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #333;
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.cityInfo h3 {
+  font-size: 1.8rem;
+  margin: 5px 0;
+  font-weight: 700;
 }
 
-.code {
+.cityInfo span {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.mainTemp {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 오른쪽 끝 정렬 */
+}
+
+.tempValue {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #222;
+  line-height: 1;
+}
+
+.subWeatherInfo {
+  font-size: 0.7rem; /* 폰트 크기를 확 줄여야 피그마 느낌이 납니다 */
+  color: #888;
+  margin-top: 10px;
+  white-space: nowrap; /* ⭐ 줄바꿈 방지 */
+  letter-spacing: -0.02em; /* 자간을 살짝 좁혀서 세련되게 */
+}
+
+/* --- 2. 5-day Forecast 아코디언 --- */
+.accordionContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.accordionContainer h2 {
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.accordionTitle {
+  padding: 15px;
+  background: #fdfdfd; /* 피그마 특유의 아주 연한 회색/흰색 배경 */
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0; /* 바깥 여백 제거 */
+}
+
+.accordionItem {
+  border-bottom: 1px solid #eee;
+}
+
+.accordionItem:last-child {
+  border-bottom: none;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #444;
+  transition: background 0.2s;
+}
+
+.accordionHeader:hover {
   background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
+/* 피그마의 붉은색 화살표 */
+.arrow {
+  color: #ff7675;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.accordionContent {
+  background: #fcfcfc;
+  padding: 0;
+}
+
+.forecastRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.forecastLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.smallWeatherIcon {
+  width: 45px;
+  height: 45px;
+  background: #f2e1df;
+  border-radius: 50%;
+  font-size: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  text-align: center;
+  color: #333;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
+.forecastTime {
+  font-weight: 700;
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+
+.forecastRight {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.forecastStatus {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.forecastTemp {
+  font-weight: 700;
+  color: #374151;
+  font-size: 1.1rem;
+}
+
+.cityButton {
+  padding: 10px 25px;
+  border: 1px solid #ff7675;
+  border-radius: 7px; /* 피그마처럼 둥글게 */
+  color: #ff7675;
+  background-color: white;
+  font-weight: 500;
+  transition: 0.2s;
+  cursor: pointer;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
+.cityButton:hover {
+  background-color: #fff1f1; /* 연한 호버 색상 */
 }
