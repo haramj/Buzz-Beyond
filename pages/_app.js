@@ -2,10 +2,21 @@
 import { ApolloProvider } from "@apollo/client/index.js"; // 경로 끝에 .js 또는 명시적 경로 확인
 import client from "../lib/apollo-client";
 import "../styles/globals.css";
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
+      <Head>
+        <title>Weather App - vling Assignment</title>
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin=""
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+        />
+      </Head>
+
       <Component {...pageProps} />
     </ApolloProvider>
   );

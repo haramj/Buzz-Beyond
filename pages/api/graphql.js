@@ -1,8 +1,8 @@
 import { ApolloServer, gql } from "apollo-server-micro";
 import axios from "axios";
 
-const API_KEY = "99ce98e85f10347f1b5389449e6af85b"; 
-const BASE_URL = "https://api.openweathermap.org/data/2.5";
+const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
+const BASE_URL = process.env.NEXT_PUBLIC_OPENWEATHER_BASE_URL;
 
 const typeDefs = gql`
   type Weather {
@@ -24,6 +24,7 @@ const typeDefs = gql`
   type ForecastData {
     list: [Forecast]
     population: Int  # 인구수 타입 추가
+    country: String
   }
 
   type Query {
@@ -51,6 +52,7 @@ const resolvers = {
       const res = await axios.get(`${BASE_URL}/forecast?q=${city}&appid=${API_KEY}&units=metric`);
       return {
         population: res.data.city.population, // 인구수 추가
+        country: res.data.city.country,
         list: res.data.list.map((item) => ({
           dt_txt: item.dt_txt,
           temp: item.main.temp,

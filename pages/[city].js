@@ -17,6 +17,7 @@ const GET_WEATHER_AND_FORECAST = gql`
     }
     getForecast(city: $city) {
       population
+      country
       list {
         dt_txt
         temp
@@ -72,7 +73,7 @@ export default function CityDetail() {
                 {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}. {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
               </span>
               <h3>
-                {city}, KR 
+                {city}, {data.getForecast.country} {}
                 <span className={styles.populationText}>
                   (인구수 : {data.getForecast.population.toLocaleString()})
                 </span>

@@ -1,52 +1,46 @@
 .mainSection {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 가로 중앙 정렬 */
-  justify-content: center; /* 세로 중앙 정렬 */
-  min-height: 80vh; /* 화면 높이에 맞춤 */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 80vh보다 100vh가 피그마처럼 중앙 배치가 잘 됩니다 */
   text-align: center;
-  padding: 20px;
-  position: relative; /* 지구본의 기준점 */
-  overflow: hidden; /* 이미지가 넘치지 않게 */
+  padding: 40px 20px;
+  background-color: #ffffff;
 }
 
 /* --- 타이틀 및 강조색 --- */
 .title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3.5rem; /* 피그마 비율에 맞춤 */
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: #1e293b;
+  /* globals.css에서 프리텐다드를 설정했으므로 font-family는 생략 가능합니다 */
+  font-size: 4.8rem; /* 3.5rem에서 대폭 키워 피그마의 웅장함을 살립니다 */
+  font-weight: 900; /* 가장 두꺼운 웨이트 적용 */
+  margin-bottom: 10px;
+  color: #3D3D3D !important;
+  letter-spacing: -0.03em; /* 자간을 줄여야 세련되어 보입니다 */
+  line-height: 1.1;
 }
 
 .title span {
-  color: #ff7675; /* 피그마의 연분홍색 강조 */
+  color: #FF0045 !important; /* 쨍한 레드 포인트 컬러 */
 }
 
 /* --- 버튼 grid (이미지 위에 오도록 z-index 설정) --- */
 .buttonGrid {
   display: flex;
-  gap: 15px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-  z-index: 10; /* ⭐ 중요: 이미지보다 높게 설정 ⭐ */
+  gap: 20px; /* 15px에서 20px로 확대 */
+  margin-bottom: 50px; /* 지구본 이미지와의 여백 */
+  z-index: 10;
   position: relative;
 }
 
 /* --- ⭐ 핵심 수정: 지구본 이미지 스타일 ⭐ --- */
 .globeImage {
-  margin-top: 20px; /* 버튼과의 간격 줄임 */
-  width: 100%; /* 부모 너비에 맞추되 */
-  max-width: 280px; /* ⭐ 중요: 피그마처럼 최대 크기를 280px로 제한 ⭐ */
-  height: auto; /* 비율 유지 */
-  z-index: 1; /* ⭐ 중요: 버튼 아래에 깔리도록 ⭐ */
-  opacity: 0.9; /* 살짝 투명하게 (선택 사항) */
-  object-fit: contain; /* 이미지 비율 깨지지 않게 */
-  
-  /* 필요하다면 위치를 수동으로 조금 조정할 수 있습니다. */
-  /* */
-  /* */
+  width: 100%;
+  max-width: 340px; /* 280px에서 340px로 조정하여 존재감 부여 */
+  height: auto;
+  z-index: 1;
+  opacity: 1; /* 투명도를 높여 선명하게 */
+  object-fit: contain;
 }
 
 /* --- 공통 레이아웃 --- */
@@ -115,6 +109,19 @@
   font-size: 1.8rem;
   margin: 5px 0;
   font-weight: 700;
+  color: #222222 !important; /* ⭐ 중요: 흰색이 되지 않도록 검정색 계열로 강제 설정 */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.description {
+  font-size: 1.05rem;
+  color: #b2bec3 !important; /* 더 연한 회색으로 변경 */
+  margin-top: 0;
+  margin-bottom: 40px; /* 버튼과의 간격 확보 */
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .cityInfo span {
@@ -260,17 +267,18 @@
 }
 
 .cityButton {
-  padding: 10px 25px;
-  border: 1px solid #ff7675;
-  border-radius: 7px; /* 피그마처럼 둥글게 */
+  display: inline-block;
+  padding: 12px 32px; /* 좌우 패딩을 늘려 버튼을 더 길게 */
+  border: 1.5px solid #ff7675; /* 테두리 두께 살짝 보강 */
+  border-radius: 8px; /* 7px에서 8px로 정돈 */
   color: #ff7675;
-  background-color: white;
-  font-weight: 500;
-  transition: 0.2s;
-  cursor: pointer;
-  text-decoration: none;
+  background-color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.25s ease-in-out;
 }
 
 .cityButton:hover {
-  background-color: #fff1f1; /* 연한 호버 색상 */
+  background-color: #fff1f1;
+  transform: translateY(-2px); /* 호버 시 살짝 떠오르는 디테일 */
 }
