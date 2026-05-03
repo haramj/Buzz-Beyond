@@ -1,11 +1,3 @@
-/**
- * Weather App 단위 테스트 케이스
- * 1. 데이터 포맷팅 안정성
- * 2. 엣지 케이스 처리 (Null, undefined, 극단적 수치)
- * 3. 비즈니스 로직 검증
- */
-
-// 테스트 대상 함수들 (실제 utils 파일이 있다면 import 하세요)
 const formatTemp = (temp) => (temp !== null && temp !== undefined ? temp.toFixed(2) : "0.00");
 const getWindDirection = (deg) => {
   if (deg === null || deg === undefined || deg < 0 || deg > 360) return 'Unknown';

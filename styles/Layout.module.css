@@ -1,8 +1,7 @@
-/* styles/Layout.module.css */
 .wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #ffffff; /* 피그마 배경색에 맞게 조정 */
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
 }
@@ -11,7 +10,6 @@
   transition: all 0.3s ease;
 }
 
-/* 1. 1280px 이상: 가운데 정렬 */
 @media (min-width: 1280px) {
   .container {
     width: 1280px;
@@ -19,16 +17,14 @@
   }
 }
 
-/* 2. 800px 이상 1280px 미만: width 100% */
 @media (min-width: 800px) and (max-width: 1279px) {
   .container {
     width: 100%;
   }
 }
 
-/* 3. 800px 미만: 크기 고정 및 스크롤 */
 @media (max-width: 799px) {
   .container {
-    width: 800px; /* 고정값 부여로 스크롤 유도 */
+    width: 800px;
   }
 }

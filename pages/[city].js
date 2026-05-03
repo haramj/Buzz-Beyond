@@ -4,7 +4,6 @@ import { useQuery, gql } from '@apollo/client';
 import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
 
-// 인구수(population)를 가져오기 위해 쿼리 구조를 수정했습니다.
 const GET_WEATHER_AND_FORECAST = gql`
   query GetWeatherAndForecast($city: String!) {
     getWeather(city: $city) {
@@ -42,7 +41,6 @@ export default function CityDetail() {
   if (error) return <Layout><p className={styles.error}>에러가 발생했습니다: {error.message}</p></Layout>;
   if (!data || !data.getWeather || !data.getForecast) return <Layout><p>날씨 정보를 찾을 수 없습니다.</p></Layout>;
 
-  // 1. 데이터를 날짜별로 그룹화 (data.getForecast.list 참조)
   const allGroupedForecast = data.getForecast.list.reduce((acc, curr) => {
     const date = curr.dt_txt.split(' ')[0];
     if (!acc[date]) acc[date] = [];
@@ -50,7 +48,6 @@ export default function CityDetail() {
     return acc;
   }, {});
 
-  // 2. 전체 날짜 중 상위 5개만 추출 (오늘 포함 5일)
   const forecastDates = allGroupedForecast 
     ? Object.keys(allGroupedForecast).slice(0, 5) 
     : [];

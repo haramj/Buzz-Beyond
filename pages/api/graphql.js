@@ -51,7 +51,7 @@ const resolvers = {
     getForecast: async (_, { city }) => {
       const res = await axios.get(`${BASE_URL}/forecast?q=${city}&appid=${API_KEY}&units=metric`);
       return {
-        population: res.data.city.population, // 인구수 추가
+        population: res.data.city.population,
         country: res.data.city.country,
         list: res.data.list.map((item) => ({
           dt_txt: item.dt_txt,
@@ -66,7 +66,6 @@ const resolvers = {
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
-// ⭐ 수정된 핵심 부분: 서버 시작을 변수에 담습니다.
 const startServer = apolloServer.start();
 
 export const config = { 
@@ -75,9 +74,7 @@ export const config = {
   } 
 };
 
-// ⭐ 수정된 핵심 부분: 명확한 비동기 핸들러 함수를 export 합니다.
 export default async function handler(req, res) {
-  // CORS 설정 (필요한 경우)
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -87,8 +84,8 @@ export default async function handler(req, res) {
     return false;
   }
 
-  await startServer; // 서버가 시작될 때까지 기다립니다.
+  await startServer;
   await apolloServer.createHandler({
     path: "/api/graphql",
-  })(req, res); // 핸들러를 실행합니다.
+  })(req, res); 
 }
