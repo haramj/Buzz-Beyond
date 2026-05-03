@@ -99,9 +99,11 @@ export default function CityDetail() {
                 onClick={() => setActiveDate(activeDate === date ? null : date)}
               >
                 {/* 날짜 포맷 (May 2 형식) */}
-                <span>{new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                <span className={styles.accordionDate}>{new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                 <span className={styles.arrow} style={{ transform: activeDate === date ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                  ∨
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </span>
               </div>
                 {activeDate === date && (
