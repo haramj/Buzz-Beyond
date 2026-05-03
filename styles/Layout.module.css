@@ -29,7 +29,6 @@
 /* 3. 800px 미만: 크기 고정 및 스크롤 */
 @media (max-width: 799px) {
   .container {
-    width: 800px; /* 더 이상 줄지 않음 */
-    overflow-x: auto;
+    width: 800px; /* 고정값 부여로 스크롤 유도 */
   }
 }

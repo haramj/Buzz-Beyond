@@ -7,11 +7,14 @@ html,
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
-  /* 텍스트 렌더링 최적화 */
+  background-color: #FAF7F5 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+
+  /* ⭐ 반응형 핵심: 800px 미만일 때 줄어들지 않고 스크롤 생성 */
+  min-width: 800px;
+  overflow-x: auto;
 }
 
 /* 제목 태그들이 시스템 폰트로 돌아가지 않도록 명시 */
