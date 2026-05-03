@@ -10,7 +10,7 @@
     "test": "jest --watchAll=false"
   },
   "engines": {
-    "node": ">=16 <19",
+    "node": ">=16 <=20",
     "npm": ">=8"
   },
   "volta": {
