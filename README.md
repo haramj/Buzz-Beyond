@@ -1,34 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 로컬 실행 및 빌드 방법
 
-## Getting Started
+### 실행 환경
 
-First, run the development server:
+이 프로젝트는 Node.js 16~20 버전을 지원합니다.  
+권장 버전은 Node.js 20입니다.
+
+현재 Node.js 버전은 아래 명령어로 확인할 수 있습니다.
+
+```bash
+node -v
+```
+
+### nvm 설치
+
+Node.js 버전 관리를 위해 `nvm` 사용을 권장합니다.
+
+`nvm`이 설치되어 있지 않다면 아래 명령어로 설치합니다.
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+설치 후 터미널을 재실행합니다.
+
+### Node.js 20 설정
+
+```bash
+nvm install 20
+nvm use 20
+```
+
+프로젝트 루트에 `.nvmrc` 파일이 있는 경우 아래 명령어로도 버전을 맞출 수 있습니다.
+
+```bash
+nvm use
+```
+
+### 의존성 설치
+
+```bash
+npm install --legacy-peer-deps
+```
+
+### 환경 변수 설정
+
+프로젝트 루트에 `.env.local` 파일을 생성한 뒤, 이메일로 전달드린 환경 변수 값을 복사해 붙여넣습니다.
+
+```bash
+touch .env.local
+```
+
+### 빌드
+
+```bash
+npm run build
+```
+
+### 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+개발 서버 실행 후 아래 주소에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```txt
+http://localhost:3000
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 단위 테스트
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm test
+```
