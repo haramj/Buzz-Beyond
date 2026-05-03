@@ -4,10 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --no-lint && NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watchAll=false"
+  },
+  "engines": {
+    "node": ">=16 <19",
+    "npm": ">=8"
+  },
+  "volta": {
+    "node": "18.20.4",
+    "npm": "10.8.2"
   },
   "dependencies": {
     "@apollo/client": "^3.14.1",
@@ -23,8 +31,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
-    "eslint": "10.3.0",
-    "eslint-config-next": "16.2.4",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "12.3.4",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0"
   }
