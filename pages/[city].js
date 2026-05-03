@@ -70,7 +70,11 @@ export default function CityDetail() {
             <div className={styles.weatherIconBox}>Weather<br/>Icon</div>
             <div className={styles.cityInfo}>
               <span className={styles.dateTimeText}>
-                {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}. {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
+                {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}. {new Date().toLocaleTimeString('en-US', { 
+                  hour: '2-digit', 
+                  minute: '2-digit', 
+                  hour12: true 
+                }).replace(" ", "").toLowerCase()}
               </span>
               <h3>
                 {city}, {data.getForecast.country} {}
